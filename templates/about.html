@@ -1,0 +1,15 @@
+{{ define "about" }}
+  {{ template "base" . }}
+{{ end }}
+
+{{ define "title" }}About{{ end }}
+
+{{ define "content" }}
+<article>
+  <h1>About</h1>
+  <div class="about-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
+

@@ -1,0 +1,16 @@
+{{ define "post" }}
+  {{ template "base" . }}
+{{ end }}
+
+{{ define "title" }}{{ .Title }}{{ end }}
+
+{{ define "content" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p class="post-date">{{ .Date }}</p>
+  <div class="post-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
+
