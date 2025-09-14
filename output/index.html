@@ -1,15 +1,15 @@
-{{ define "about" }}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ .SiteTitle }} - About </title>
+  <title>vaibhavxlr&#39;s blog - About </title>
   <link rel="stylesheet" href="/style.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
   <header>
-	   <h1><a href="/"> {{ .SiteTitle }} </a></h1>
+	   <h1><a href="/"> vaibhavxlr&#39;s blog </a></h1>
     <nav>
       <a href="/">About</a> | 
       <a href="/blog/">Blog</a> 
@@ -18,7 +18,12 @@
   <main>
     <h1>About me</h1>
     <div>
-      {{ .Content }}
+      <p>Hi, I’m Vaibhav 👋</p>
+
+<p>I’m passionate about <strong>systems programming</strong>, and I love tinkering with Go, Linux, and writing small tools.</p>
+
+<p>This site is where I share my notes, experiments, and blog posts.</p>
+
     </div>
         <h2>Connect with me</h2>
     <ul>
@@ -28,9 +33,7 @@
     </ul>
   </main>
   <footer>
-    <p>© {{ .CopyrightYear }} {{ .Author }}</p>
+    <p>© 2025 Vaibhav Upadhyay</p>
   </footer>
 </body>
 </html>
-{{ end }}
-

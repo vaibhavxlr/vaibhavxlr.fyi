@@ -1,24 +1,39 @@
 {{ define "blog" }}
-  {{ template "base" . }}
-{{ end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .SiteTitle }} - blog</title>
+  <link rel="stylesheet" href="/style.css">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">About</a> |
+      <a href="/blog/">Blog</a> 
+    </nav>
+  </header>
+  <main>
+    <h1>Blog</h1>
+    <p>{{ .BlogIntro }}</p>
 
-{{ define "title" }}Blog{{ end }}
-
-{{ define "content" }}
-<h1>Blog</h1>
-
-<p>{{ .BlogIntro }}</p>
-
-{{ range $year, $posts := .PostsByYear }}
-  <h2>{{ $year }}</h2>
-  <ul class="post-list">
-    {{ range $posts }}
+{{ range .Years }}
+  <h2>{{ . }}</h2>
+  <ul>
+    {{ range index $.PostsByYear . }}
       <li>
         <a href="/posts/{{ .Year }}/{{ .Slug }}/">{{ .Title }}</a>
-        <span class="date">{{ .Date }}</span>
+        <small>{{ .Date }}</small>
       </li>
     {{ end }}
   </ul>
 {{ end }}
+  </main>
+  <footer>
+    &copy; {{ .CopyrightYear }} {{ .Author }}
+  </footer>
+</body>
+</html>
 {{ end }}
 
